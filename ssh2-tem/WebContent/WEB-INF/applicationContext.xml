@@ -32,4 +32,11 @@
 		<property name="dsi" ref="deleteServiceImpl" />
 	</bean>
 
+	<bean id="user" class="com.daniel.model.User" />
+	
+	<bean id="RegisterServiceImpl" class="com.daniel.service.impl.RegisterServiceImpl" >
+		<property name="user" ref="user" />
+	</bean>
+	
+	
 </beans>

@@ -11,6 +11,7 @@ public class HibernateUtil
 	
 	static
 	{
+		
 		try
 		{
 			Configuration configuration = new Configuration()

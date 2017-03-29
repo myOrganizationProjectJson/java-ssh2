@@ -8,11 +8,16 @@ import org.hibernate.Transaction;
 import com.daniel.model.User;
 import com.daniel.service.MyService;
 import com.daniel.util.HibernateUtil;
+import com.opensymphony.xwork2.Action;
 
-public class RegisterServiceImpl implements MyService{
+public class RegisterServiceImpl implements MyService,Action{
 
+	private User user;
 	@Override
 	public boolean vaild(String username, String password) {
+		
+		System.out.println(getUser());; 
+		System.out.println("test");;
 		// TODO Auto-generated method stub
 		if(registerUser(username, password)){
 			return true;
@@ -20,7 +25,7 @@ public class RegisterServiceImpl implements MyService{
 		return false;
 	}
 
-	private boolean registerUser(String username, String password) {
+	public boolean registerUser(String username, String password) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.currentSession();
 		Transaction tx = session.beginTransaction();
@@ -30,7 +35,9 @@ public class RegisterServiceImpl implements MyService{
 		List list = session.createQuery(hql).list();
 		if(list.isEmpty()){
 			//不存在用户，则可以注册
-			User user = new User();
+			//User user = new User();
+			
+			System.out.println("testDDD1");
 			user.setUsername(username);
 			user.setPassword(password);
 			session.save(user);
@@ -38,6 +45,24 @@ public class RegisterServiceImpl implements MyService{
 			return true;
 		}
 		return false;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	@Override
+	public String execute() throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("dfdfdf");
+		
+		this.vaild("test123","456123");
+		
+		return "success";
 	}
 
 }

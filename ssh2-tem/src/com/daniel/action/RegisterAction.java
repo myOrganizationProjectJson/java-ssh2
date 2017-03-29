@@ -16,6 +16,8 @@ public class RegisterAction implements Action {
 			System.out.println("success");
 			return "registerSuccess";
 		}
+		
+	
 		return "registerFail";
 	}
 

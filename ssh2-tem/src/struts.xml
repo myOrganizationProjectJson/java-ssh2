@@ -28,7 +28,14 @@
     		<result name="fail">/updateFail.jsp</result>
     	</action>
     	
-    	<action name="deleteAction" class="deleteAction">
+    	<action name="deleteAction" class="deleteAction" method="login">
+    		<result name="fail">/deleteFail.jsp</result>
+    		<result name="success">/deleteSuccess.jsp</result>
+    	</action>
+    	
+    	
+    	
+    	<action name="RegisterServiceImpl" class="RegisterServiceImpl">
     		<result name="fail">/deleteFail.jsp</result>
     		<result name="success">/deleteSuccess.jsp</result>
     	</action>
