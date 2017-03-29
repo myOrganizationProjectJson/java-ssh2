@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="registerServiceImpl" class="com.daniel.service.impl.RegisterServiceImpl" />
+
+	<bean id="registerAction" class="com.daniel.action.RegisterAction"
+		scope="prototype">
+		<property name="rsi" ref="registerServiceImpl" />
+	</bean>
+
+	<bean id="loginServiceImpl" class="com.daniel.service.impl.LoginServiceImpl" />
+
+	<bean id="loginAction" class="com.daniel.action.LoginAction"
+		scope="prototype">
+		<property name="lsi" ref="loginServiceImpl" />
+	</bean>
+
+	<bean id="updateServiceImpl" class="com.daniel.service.impl.UpdateServiceImpl" />
+	
+	<bean id="updateAction" class="com.daniel.action.UpdateAction" scope="prototype">
+		<property name="us" ref="updateServiceImpl" />
+	</bean>
+	
+	<bean id="deleteServiceImpl" class="com.daniel.service.impl.DeleteServiceImpl" />
+	
+	<bean id="deleteAction" class="com.daniel.action.DeleteAction" scope="prototype">
+		<property name="dsi" ref="deleteServiceImpl" />
+	</bean>
+
+</beans>
