@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.daniel.model.User;
 import com.daniel.service.impl.DeleteServiceImpl;
 import com.opensymphony.xwork2.Action;
 
@@ -11,6 +12,7 @@ public class DeleteAction implements Action{
 	private String username;
 	private DeleteServiceImpl dsi;
 	private String tip;
+	private List<User> userList;
 	
 	private List orderList;
 	@Override
@@ -57,26 +59,25 @@ public class DeleteAction implements Action{
 		this.tip = tip;
 	}
 	
+	public void setUserList(List<User> userList){
+		this.userList=userList;
+		
+	}
+	
+	public List<User> getUserList() {
+		return userList;
+	}
+	
+	
+	public String deleteList(){
+		List<User> userList=dsi.getUser();
+		this.userList=userList;
+		return "success";
+	}
 	
 	
 	public String login() {
 		System.out.println(""+"logining");
-		
-		
-		
-		String a="testa";
-		
-		List<Integer> list=new ArrayList<Integer>(new Integer(13));
-		list.add(1);
-		list.add(2);
-		list.add(3);
-		list.add(4);
-		
-		this.orderList=list;
-		
-		this.setTip(a);;
-		System.out.println(this.getTip());
-	
 		
 		return "fail";
 	}

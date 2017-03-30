@@ -21,6 +21,7 @@
 <%="TEST"%>
   <s:property value="tip"/>
   <s:property value="#a"/>
+  
   	<s:iterator id="temporder" value="orderList">
 				<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
 					<td align="center">${temporder}</td>

@@ -16,6 +16,16 @@
 			<td colspan="2"><s:submit value="É¾³ý" theme="simple" /></td>
 		</tr>
 	</s:form>
+	
+	  	<s:iterator id="t" value="userList">
+				<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+					<td align="center">${t.id}</td>
+				</tr>
+				<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+					<td align="center">${t.username}</td>
+				</tr>
+	</s:iterator>
+	
 	<a href="index">·µ»ØÖ÷Ò³Ãæ</a>
 </body>
 </html>

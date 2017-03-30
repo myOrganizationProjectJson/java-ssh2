@@ -28,16 +28,14 @@
     		<result name="fail">/updateFail.jsp</result>
     	</action>
     	
-    	<action name="deleteAction" class="deleteAction" method="login">
+    	<action name="deleteAction" class="deleteAction" >
     		<result name="fail">/deleteFail.jsp</result>
     		<result name="success">/deleteSuccess.jsp</result>
     	</action>
     	
     	
-    	
-    	<action name="RegisterServiceImpl" class="RegisterServiceImpl">
-    		<result name="fail">/deleteFail.jsp</result>
-    		<result name="success">/deleteSuccess.jsp</result>
+    	<action name="delete" class="deleteAction" method="deleteList">
+    		<result name="success">/delete.jsp</result>
     	</action>
     	
     </package>
