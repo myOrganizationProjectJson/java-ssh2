@@ -24,7 +24,7 @@
 				<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
 					<td align="center">${t.username}</td>
 				</tr>
-	</s:iterator>
+	    </s:iterator>
 	
 	<a href="index">·µ»ØÖ÷Ò³Ãæ</a>
 </body>

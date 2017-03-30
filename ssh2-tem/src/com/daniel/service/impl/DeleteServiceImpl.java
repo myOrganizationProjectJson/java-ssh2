@@ -30,7 +30,7 @@ public class DeleteServiceImpl implements DeleteService{
 	}
 	
 	
-	public List<User> getUser(){
+    public List<User> getUser(){
 		List<User> userList =new ArrayList<User>();
 		
 		Session session = HibernateUtil.currentSession();
